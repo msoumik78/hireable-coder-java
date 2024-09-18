@@ -9,8 +9,7 @@ import java.nio.charset.StandardCharsets;
 public class DemoApplication {
   public static void main(String[] args) throws Exception{
     Connection nc = Nats.connect();
-    nc.publish("subject", "hello world from java-soumik".getBytes(StandardCharsets.UTF_8));
+    nc.publish("test-subject", "hello world from java".getBytes(StandardCharsets.UTF_8));
     System.out.println("published");
   }
-
 }
