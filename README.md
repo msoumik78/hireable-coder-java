@@ -1,4 +1,4 @@
-# Functionality : Standalone NATS producer
+# Functionality : Standalone Java based NATS producer
 Simple java standalone application which can publish a message to a specific subject in NATS messaging platform. 
 
 
