@@ -4,19 +4,19 @@ package com.example.demo;
 import java.util.concurrent.FutureTask;
 
 public class DemoApplication {
-  public static void main(String[] args) throws Exception{
-    System.out.println("Running in:"+Thread.currentThread().getName());
-    Thread thread1 = new Thread(new RunnableTask());
-    Thread thread2 = new Thread(new RunnableTask());
+  public static void main(String[] args){
+  Thread thread1 = new Thread(() -> System.out.println("Running in non main thread"));
+  Thread thread2 = new Thread(() -> {
+    System.out.println("This runnable has multiple lines");
+    System.out.println("Running in non main thread" );
+  });
     thread1.start();
     thread2.start();
 
-
-    CallableTask callableTask = new CallableTask();
-    FutureTask<String> ft = new FutureTask<>(callableTask);
+    FutureTask<String> ft = new FutureTask<>(() -> {
+      return "Hello World";
+    });
     Thread thread3 = new Thread(ft);
     thread3.start();
-    System.out.println(ft.get());
-
   }
 }
