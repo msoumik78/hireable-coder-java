@@ -1,10 +1,9 @@
-# Functionality : Lombok usage in standalone java class
-Simple java standalone class which uses lombok to generate constructors, setters, getters, ToString, Log , builders etc..
+# Functionality : Lambdas in standalone java class
+Simple java standalone class which demonstrates usage of lambdas and functional interfaces in java.
 
 
 # Technical details and Pre-requisites
 - Written using core java.
-- Uses Lombok
 
 
 # How to run locally
