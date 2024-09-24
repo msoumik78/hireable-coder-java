@@ -7,12 +7,4 @@ spring:
 server:
   port : 8085
 
-message: "Test message"
-
-user-lists:
-  users:
-    user1: 100001
-    user2: 100002
-    user3: 100003
-    user4: 100004
-
+message: ENC(DDurUGFoWn7w8Ei/zoP3XIuTKfem6E3wyGX1bElPHZJFTHZjCeeHVcqPd40uP9PM)

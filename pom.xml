@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
-  <artifactId>spring-boot-read-properties</artifactId>
+  <artifactId>spring-boot-read-encrypted-properties</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>demo</name>
-  <description>Demo project for SpringBoot to read properties</description>
+  <description>Demo project for SpringBoot to read encrypted properties</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -30,9 +30,19 @@
       <version>1.18.34</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>com.github.ulisesbocchio</groupId>
+      <artifactId>jasypt-spring-boot-starter</artifactId>
+      <version>3.0.5</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
+      <plugin>
+        <groupId>com.github.ulisesbocchio</groupId>
+        <artifactId>jasypt-maven-plugin</artifactId>
+        <version>3.0.3</version>
+      </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.0</version>
