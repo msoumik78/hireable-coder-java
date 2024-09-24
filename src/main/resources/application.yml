@@ -10,7 +10,7 @@ server:
 message: "Test message"
 
 user-lists:
-  users:
+  live-users:
     user1: 100001
     user2: 100002
     user3: 100003

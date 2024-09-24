@@ -10,14 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/1")
 @RequiredArgsConstructor
 public class BasicController {
-  @Value("${message}")
+  @Value("${spring.application.name}")
   private String sampleProperty;
 
   private final UserListConfig userListConfig;
 
   @RequestMapping("/config")
   String getConfig() {
-    System.out.println(userListConfig.getUsers().size());
+    System.out.println(userListConfig.getLiveUsers().size());
+    userListConfig.getLiveUsers().forEach((k,v) -> {
+      System.out.println("key :"+k+", value :"+v);
+    });
     return this.sampleProperty;
   }
 }

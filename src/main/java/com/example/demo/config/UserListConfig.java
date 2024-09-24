@@ -13,7 +13,6 @@ import java.util.Map;
 @ConfigurationProperties(prefix = "user-lists")
 @Configuration
 public class UserListConfig {
-
-  protected Map<String, String> users = new HashMap<>();
+  protected Map<String, String> liveUsers = new HashMap<>();
 
 }
