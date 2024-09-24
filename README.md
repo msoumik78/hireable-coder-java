@@ -13,7 +13,7 @@ Simple spring boot app which reads properties from application.yml file
 - Build the project using the command :
   (`mvn clean package`)
 - Now run the app using the below command :
-  (`mvn exec:java  -Dexec.mainClass="com.example.demo.DemoSpringBootApp"`)
+  (`java -jar target/spring-boot-read-properties-0.0.1-SNAPSHOT.jar`)
 - You can access the endpoint using the command and it should return "Test message":
   (`curl http://localhost:8085/api/1/config`)
 
