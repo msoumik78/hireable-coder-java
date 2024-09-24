@@ -1,17 +1,19 @@
-# Functionality : Standalone Java based NATS producer
-Simple java standalone application which can publish a message to a specific subject in NATS messaging platform. 
+# Functionality : Spring boot app which reads properties from application.yml file
+Simple spring boot app which reads properties from application.yml file
 
 
 # Technical details and Pre-requisites
-- Written using core java.
-- Uses NATS library to make a connection and publish messages
-- Ensure that you have downloaded NATS for your OS and started the NATS server locally. NATS can be downloaded from [here](https://github.com/nats-io/nats-server/releases/) corresponding to your OS.
+- Written using core java and spring boot framework
 
 
 # How to run locally
-- Clone this branch (nats-publisher) to your laptop
+- Clone this branch (spring-boot-read-properties) to your laptop with the below command:
+  (`git clone --branch spring-boot-read-properties https://github.com/msoumik78/hireable-coder-java`)
 - Ensure that you have latest JDK and Maven3.8.5 available
 - Build the project using the command :
   (`mvn clean package`)
-- Now run the app using the below command which starts the app with 'test' profile:
-  (`mvn exec:java  -Dexec.mainClass="com.example.demo.DemoApplication"`)
+- Now run the app using the below command :
+  (`mvn exec:java  -Dexec.mainClass="com.example.demo.DemoSpringBootApp"`)
+- You can access the endpoint using the command and it should return "Test message":
+  (`curl http://localhost:8085/api/1/config`)
+
