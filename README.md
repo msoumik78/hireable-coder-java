@@ -18,5 +18,5 @@ Simple spring boot app which demonstrates basic spring security
   Now it should log/print a password in the console.
   Copy the password and use it in the CreateCredentials.java class and run it to generate the base 64 encoded version.
 - You can access the endpoint using the command below (replace the token with the one generated above):
-  (`curl -H "Authorization:Basic dXNlcjpjZDBhYmU0MC02NDRjLTRkMjAtYTViNy03NmVlM2Q0ODgwM2I=" http://localhost:8085/api/1/config`)
+  (`curl -H "Authorization:Basic dGVzdDpwYXNzd29yZA==" http://localhost:8085/api/1/config`)
 
