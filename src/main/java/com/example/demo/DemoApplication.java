@@ -17,9 +17,7 @@ public class DemoApplication {
 
   static {
     dataSource = new BasicDataSource();
-    dataSource.setUrl("jdbc:mysql://localhost:3306/test1");
-    dataSource.setUsername("root");
-    dataSource.setPassword("password");
+    dataSource.setUrl("jdbc:sqlite:/Users/msoumik/softwares/sqllite/ex1");
 
     dataSource.setMinIdle(5);
     dataSource.setMaxIdle(10);
@@ -61,9 +59,8 @@ public class DemoApplication {
 
   private static void getDataFromDB() throws SQLException, ClassNotFoundException {
     long startTime = System.currentTimeMillis();
-    Class.forName("com.mysql.jdbc.Driver");
-    Connection con= DriverManager.getConnection(
-      "jdbc:mysql://localhost:3306/test1","root","password");
+    //Class.forName("com.mysql.jdbc.Driver");
+    Connection con= DriverManager.getConnection("jdbc:sqlite:/Users/msoumik/softwares/sqllite/ex1");
     Statement stmt=con.createStatement();
     //createTable(stmt);
     //populateTable(con);
@@ -106,10 +103,10 @@ public class DemoApplication {
   }
 
   private static void selectFromTable(Statement stmt) throws SQLException {
-    String sql = "Select name, age from employees; ";
+    String sql = "Select StudentName, CurrentYear from StudentsMaster; ";
     ResultSet resultSet = stmt.executeQuery(sql);
     while(resultSet.next()) {
-      //System.out.println("Name : "+resultSet.getString(1)+", Age: "+resultSet.getInt(2));
+      //System.out.println("Name : "+resultSet.getString(1)+", Year: "+resultSet.getInt(2));
     }
     if (resultSet != null) {
       resultSet.close();
