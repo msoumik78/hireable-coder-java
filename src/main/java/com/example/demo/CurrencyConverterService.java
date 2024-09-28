@@ -2,7 +2,7 @@ package com.example.demo;
 
 import java.util.Map;
 
-public class CurrencyCalculatorService {
+public class CurrencyConverterService {
 
   private static Map<String, Float> currencyExchangeRates
     = Map.of

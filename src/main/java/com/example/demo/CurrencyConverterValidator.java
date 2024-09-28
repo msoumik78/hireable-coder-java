@@ -1,6 +1,6 @@
 package com.example.demo;
 
-public class CurrencyCalculaeValidator {
+public class CurrencyConverterValidator {
   public static boolean areAllInputsProvided(String[] args) {
     if (args.length != 3) {
       System.out.println("Inputs not provided properly, run the program as : " +
