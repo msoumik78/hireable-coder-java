@@ -1,17 +1,20 @@
-# Functionality : Standalone Java based NATS producer
-Simple java standalone application which can publish a message to a specific subject in NATS messaging platform. 
+# Functionality : Standalone Java programs implementing hashing using Argon2
+Simple java standalone programs which implement hashing using argon2 algorithm.
 
 
 # Technical details and Pre-requisites
 - Written using core java.
-- Uses NATS library to make a connection and publish messages
-- Ensure that you have downloaded NATS for your OS and started the NATS server locally. NATS can be downloaded from [here](https://github.com/nats-io/nats-server/releases/) corresponding to your OS.
+- One approach uses a JVM-bind which is here
+- Another approach uses spring-security-crypto and bouncy castle as the provider
 
 
 # How to run locally
-- Clone this branch (nats-publisher) to your laptop
+- Clone this branch (nats-publisher) to your laptop using the command
+  (`git clone --branch hashing-demo https://github.com/msoumik78/hireable-coder-java`)
 - Ensure that you have latest JDK and Maven3.8.5 available
 - Build the project using the command :
   (`mvn clean package`)
-- Now run the app using the below command which starts the app with 'test' profile:
-  (`mvn exec:java  -Dexec.mainClass="com.example.demo.DemoApplication"`)
+- Now run the app using the below command :
+  (`mvn exec:java  -Dexec.mainClass="com.example.demo.HashingUsingArgonDirectly"`)
+- Now again run the app using the below command :
+    (`mvn exec:java  -Dexec.mainClass="com.example.demo.HashingUsingSpringSecurityCrypto"`)
