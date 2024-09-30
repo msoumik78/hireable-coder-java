@@ -9,7 +9,7 @@ Simple java standalone programs which implement hashing using argon2 algorithm.
 
 
 # How to run locally
-- Clone this branch (nats-publisher) to your laptop using the command
+- Clone this branch (hashing-demo) to your laptop using the command
   (`git clone --branch hashing-demo https://github.com/msoumik78/hireable-coder-java`)
 - Ensure that you have latest JDK and Maven3.8.5 available
 - Build the project using the command :
