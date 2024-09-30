@@ -4,7 +4,7 @@ Simple java standalone programs which implement hashing using argon2 algorithm.
 
 # Technical details and Pre-requisites
 - Written using core java.
-- One approach uses a JVM-bind which is here
+- One approach uses a JVM-bind which is [here](https://github.com/phxql/argon2-jvm)
 - Another approach uses spring-security-crypto and bouncy castle as the provider
 
 
