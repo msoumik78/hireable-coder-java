@@ -1,0 +1,8 @@
+spring:
+  application:
+      name: demo-config-client1
+  cloud:
+    config:
+      enabled: false
+
+message: "Test message from soumik"
