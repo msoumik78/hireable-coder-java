@@ -1,5 +1,5 @@
-# Functionality : Spring boot app which reads properties from application.yml file
-Simple spring boot app which reads properties from application.yml file
+# Functionality : Spring boot app with MDC in logging
+Simple spring boot app with MDC in logging
 
 
 # Technical details and Pre-requisites
