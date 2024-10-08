@@ -1,17 +1,17 @@
-# Functionality : Standalone Java based NATS producer
-Simple java standalone application which can publish a message to a specific subject in NATS messaging platform. 
+# Functionality : Demo of awaitility library
+Demo of awaitility library to test the HttpClient code asynchronously.
 
 
 # Technical details and Pre-requisites
 - Written using core java.
-- Uses NATS library to make a connection and publish messages
-- Ensure that you have downloaded NATS for your OS and started the NATS server locally. NATS can be downloaded from [here](https://github.com/nats-io/nats-server/releases/) corresponding to your OS.
+- Leverages [awaitility library](http://www.awaitility.org/) to test the HttpClient code
+- A REST endpoint is up and running in Mockoon platform
 
 
 # How to run locally
-- Clone this branch (nats-publisher) to your laptop
+- Clone this branch (awaitility-demo) to your laptop using the below command :
+  (`git clone --branch awaitility-demo https://github.com/msoumik78/hireable-coder-java`)
 - Ensure that you have latest JDK and Maven3.8.5 available
-- Build the project using the command :
+- Now start Mockoon so that a GET endpoint is available at http://localhost:3000/users
+- Now build the project and run the test using the command:
   (`mvn clean package`)
-- Now run the app using the below command which starts the app with 'test' profile:
-  (`mvn exec:java  -Dexec.mainClass="com.example.demo.DemoApplication"`)
