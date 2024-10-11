@@ -9,3 +9,13 @@ server:
 
 message: "Test message"
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, loggers
+
+---
+spring.config.activate.on-profile: local
+
+message: "Test message in local"
