@@ -23,6 +23,6 @@ Demonstration of logging in a spring boot application
 - Use the below command to know the log level in the controller class:
   (`curl http://localhost:8085/actuator/loggers/com.example.demo.controller.BasicController`)
 - Use the below command to change the log level in the controller class:
-  (`curl -H 'Content-Type: application/json'  -d '{"configuredLevel": "ERROR"}' -X POST http://localhost:8085/actuator/loggers/com.example.demo.controller.BasicController`)
+  (`curl -H 'Content-Type: application/json'  -d '{"configuredLevel": "INFO"}' -X POST http://localhost:8085/actuator/loggers/com.example.demo.controller.BasicController`)
 
 
