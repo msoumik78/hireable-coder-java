@@ -1,11 +1,11 @@
 spring:
   application:
-    name: sb-read-properties
+    name: sb-read-properties-lambda
   cloud:
     config:
       enabled: false
 server:
   port : 8085
 
-message: "Test message"
+message: "Test message for AWS lambda"
 

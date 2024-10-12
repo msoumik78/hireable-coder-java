@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/1")
 @RequiredArgsConstructor
 public class BasicController {
-  @Value("${spring.application.name}")
+  @Value("${message}")
   private String sampleProperty;
 
   @RequestMapping("/config")
