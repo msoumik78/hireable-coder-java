@@ -4,7 +4,8 @@ Simple spring boot app which is deployed to AWS lambda
 
 # Technical details and Pre-requisites
 - Written using core java and spring boot framework
-- Deployed to AWS Lambda
+- Deployed to AWS Lambda. Refer to this [guide](https://github.com/aws/serverless-java-container/wiki/Quick-start---Spring-Boot3) for details.
+
 
 
 # How to build locally
