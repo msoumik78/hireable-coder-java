@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
-  <artifactId>spring-boot-security-demo</artifactId>
+  <artifactId>spring-boot-security-with-h2-database</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>demo</name>
-  <description>Demo project for SpringBoot security</description>
+  <description>Demo project for SpringBoot security with H2 database</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -35,6 +35,16 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jdbc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
   </dependencies>
   <build>
     <plugins>

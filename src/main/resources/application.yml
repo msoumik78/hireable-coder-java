@@ -4,10 +4,6 @@ spring:
   cloud:
     config:
       enabled: false
-#  security:
-#    user:
-#      name: test12
-#      password: password123
 server:
   port : 8085
 
