@@ -1,8 +1,8 @@
 spring:
   application:
-      name: demo-config-client1
+      name: demo-gateway
   cloud:
     config:
       enabled: false
 
-message: "Test message from soumik"
+
