@@ -6,15 +6,10 @@ import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 import javax.sql.DataSource;
@@ -34,21 +29,9 @@ public class WebSecurityConfig {
   }
 
   @Bean
-  JdbcUserDetailsManager users(DataSource dataSource, PasswordEncoder encoder) {
-    UserDetails admin = User.builder()
-      .username("test")
-      .password(encoder.encode("password123"))
-      .roles("USER")
-      .build();
-    JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
-    jdbcUserDetailsManager.createUser(admin);
-    return jdbcUserDetailsManager;
-  }
-
-  @Bean
   public PasswordEncoder passwordEncoder() {
-    return NoOpPasswordEncoder.getInstance();
-    //return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    //return NoOpPasswordEncoder.getInstance();
+    return PasswordEncoderFactories.createDelegatingPasswordEncoder();
   }
 
   @Bean
