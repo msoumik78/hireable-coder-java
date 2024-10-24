@@ -39,6 +39,7 @@ Simple spring boot app which demonstrates basic spring security with users in ex
 - Now run the app using the below command :
   (`java -jar target/spring-boot-security-with-mysql-database-0.0.1-SNAPSHOT.jar`)
 - You can access the endpoint using the command below :
-  (`curl -H "Authorization:Basic dGVzdDpwYXNzd29yZDEyMw==" http://localhost:8085/api/1/config`)
+  (`curl -H "Authorization:dGVzdDpwYXNzd29yZDEyMw==" http://localhost:8085/api/1/config`)
 
 
+curl http://localhost:8085/api/1/config
