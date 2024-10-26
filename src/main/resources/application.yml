@@ -8,6 +8,9 @@ spring:
 #    user:
 #      name: test12
 #      password: password123
+#logging:
+#  level:
+#    org.springframework.security: TRACE
 server:
   port : 8085
 
