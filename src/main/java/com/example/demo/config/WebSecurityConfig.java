@@ -33,13 +33,7 @@ public class WebSecurityConfig {
 
   @Bean
   JdbcUserDetailsManager users(DataSource dataSource, PasswordEncoder encoder) {
-    UserDetails admin = User.builder()
-      .username("test")
-      .password(encoder.encode("password123"))
-      .roles("USER")
-      .build();
     JdbcUserDetailsManager jdbcUserDetailsManager = new JdbcUserDetailsManager(dataSource);
-    jdbcUserDetailsManager.createUser(admin);
     return jdbcUserDetailsManager;
   }
 
@@ -52,13 +46,9 @@ public class WebSecurityConfig {
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     return http
       .authorizeHttpRequests(
-        auth -> {
-            auth.requestMatchers("/h2-console/**").permitAll();
-            auth.anyRequest().authenticated();
-          }
+        auth -> auth.anyRequest().authenticated()
         )
       .httpBasic(Customizer.withDefaults())
-      //.formLogin(Customizer.withDefaults())
       .build();
   }
 

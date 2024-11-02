@@ -25,6 +25,8 @@ Simple spring boot app which demonstrates basic spring security with users in ex
   ```kotlin
   create table users(username varchar(50) not null primary key, password varchar(500) not null, enabled boolean not null);
   create table authorities (username varchar(50) not null, authority varchar(50) not null, constraint fk_authorities_users foreign key(username) references users(username));
+  insert into users(username, password, enabled) values ('test', '{bcrypt}$2a$10$BfbRoeN5/M16fbZCkSIMfu41v1skGcGT0gn229CqOHzw7lsA8FDSO', true);
+  insert into authorities(username, authority) values ('test', 'USER');
   ```
 
 
@@ -40,5 +42,3 @@ Simple spring boot app which demonstrates basic spring security with users in ex
   (`java -jar target/spring-boot-security-with-mysql-database-0.0.1-SNAPSHOT.jar`)
 - You can access the endpoint using the command below :
   (`curl -H "Authorization:Basic dGVzdDpwYXNzd29yZDEyMw==" http://localhost:8085/api/1/config`)
-
-

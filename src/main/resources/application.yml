@@ -1,6 +1,6 @@
 spring:
   application:
-    name: sb-read-properties
+    name: spring-boot-security-with-mysql-database
   cloud:
     config:
       enabled: false
