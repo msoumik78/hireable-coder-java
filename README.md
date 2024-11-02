@@ -5,6 +5,7 @@ Simple spring boot app which demonstrates basic spring security with users in ex
 # Technical details and Pre-requisites
 - Written using core java and spring boot framework
 - Leverages spring security to do basic authentication based on an user credential
+- First generate the bcrypt hash of the password 'password123' using the program BcryptPasswordHashGenerator. This generated hash needs to be used for the password in the insert users query below.
 - Create a docker container for MySQL database with the below shell script
   ```kotlin
   docker kill $(docker ps -q)
@@ -25,10 +26,9 @@ Simple spring boot app which demonstrates basic spring security with users in ex
   ```kotlin
   create table users(username varchar(50) not null primary key, password varchar(500) not null, enabled boolean not null);
   create table authorities (username varchar(50) not null, authority varchar(50) not null, constraint fk_authorities_users foreign key(username) references users(username));
-  insert into users(username, password, enabled) values ('test', '{bcrypt}$2a$10$BfbRoeN5/M16fbZCkSIMfu41v1skGcGT0gn229CqOHzw7lsA8FDSO', true);
+  insert into users(username, password, enabled) values ('test', '{bcrypt}$2a$10$GvAwEHb.exnDued6x2gNGuBZMEYcSP8Rux0ZhC6cE/XCF.yltDPPW', true);
   insert into authorities(username, authority) values ('test', 'USER');
   ```
-
 
 
 
