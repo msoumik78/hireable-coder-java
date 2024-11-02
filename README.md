@@ -32,6 +32,8 @@ Simple spring boot app which demonstrates basic spring security with users in ex
 
 
 
+__
+
 # How to run locally
 - Clone this branch (spring-boot-security-using-jdbc-mysql-1) to your laptop with the below command:
   (`git clone --branch spring-boot-security-using-jdbc-mysql-1 https://github.com/msoumik78/hireable-coder-java`)
