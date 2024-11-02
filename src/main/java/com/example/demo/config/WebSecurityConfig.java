@@ -30,7 +30,6 @@ public class WebSecurityConfig {
 
   @Bean
   public PasswordEncoder passwordEncoder() {
-    //return NoOpPasswordEncoder.getInstance();
     return PasswordEncoderFactories.createDelegatingPasswordEncoder();
   }
 
@@ -39,12 +38,10 @@ public class WebSecurityConfig {
     return http
       .authorizeHttpRequests(
         auth -> {
-            auth.requestMatchers("/h2-console/**").permitAll();
             auth.anyRequest().authenticated();
           }
         )
       .httpBasic(Customizer.withDefaults())
-      //.formLogin(Customizer.withDefaults())
       .build();
   }
 

@@ -17,7 +17,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
   private final JdbcTemplate jdbcTemplate;
 
-  private final String selectSQL = "Select * from users where username = ? ";
+  private final String selectSQL = "Select * from users2 where username = ? ";
 
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

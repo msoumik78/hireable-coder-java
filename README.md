@@ -23,10 +23,10 @@ Simple spring boot app which demonstrates basic spring security with users in ex
   (`use testusers`)
 - Then execute the below queries to create the 2 tables:
   ```kotlin
-  create table users(username varchar(50) not null primary key, password varchar(500) not null, enabled boolean not null);
-  create table authorities (username varchar(50) not null, authority varchar(50) not null, constraint fk_authorities_users foreign key(username) references users(username));
-  insert into users(username,password, enabled) values('test', '{noop}password123', true);
-  insert into authorities(username , authority) values('test', 'ROLE_USER');
+  create table users2(username varchar(50) not null primary key, password varchar(500) not null, enabled boolean not null);
+  create table authorities2 (username varchar(50) not null, authority varchar(50) not null, constraint fk_authorities_users2 foreign key(username) references users2(username));
+  insert into users2(username,password, enabled) values('test', '{bcrypt}$2a$10$BfbRoeN5/M16fbZCkSIMfu41v1skGcGT0gn229CqOHzw7lsA8FDSO', true);
+  insert into authorities2(username , authority) values('test', 'ROLE_USER');
   ```
 
 
