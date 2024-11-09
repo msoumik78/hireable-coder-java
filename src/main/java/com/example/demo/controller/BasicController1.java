@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/1")
 @RequiredArgsConstructor
-public class BasicController {
+public class BasicController1 {
   @Value("${message}")
   private String sampleProperty;
 

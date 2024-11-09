@@ -3,6 +3,7 @@ package com.example.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -13,7 +14,8 @@ import org.springframework.security.web.SecurityFilterChain;
 public class WebSecurityConfig {
 
   @Bean
-  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+  @Order(1)
+  public SecurityFilterChain filterChain1(HttpSecurity http) throws Exception {
     return http
       .authorizeHttpRequests(
         auth -> {
@@ -22,8 +24,18 @@ public class WebSecurityConfig {
         }
       )
       .httpBasic(Customizer.withDefaults())
-      .formLogin(Customizer.withDefaults())
-      .oauth2Login(Customizer.withDefaults())
+      .build();
+  }
+
+
+  @Bean
+  @Order(2)
+  public SecurityFilterChain filterChain2(HttpSecurity http) throws Exception {
+    return http
+      .authorizeHttpRequests(
+        auth -> auth.requestMatchers("/api/2/private").permitAll()
+      )
+      .httpBasic(Customizer.withDefaults())
       .build();
   }
 
