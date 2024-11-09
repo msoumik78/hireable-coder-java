@@ -1,3 +1,4 @@
+
 package com.example.demo.config;
 
 import org.springframework.context.annotation.Bean;
@@ -21,7 +22,10 @@ public class WebSecurityConfig {
         }
       )
       .httpBasic(Customizer.withDefaults())
+      .formLogin(Customizer.withDefaults())
+      .oauth2Login(Customizer.withDefaults())
       .build();
   }
 
 }
+

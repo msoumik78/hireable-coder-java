@@ -12,11 +12,6 @@ public class BasicController {
   @Value("${message}")
   private String sampleProperty;
 
-  @RequestMapping("/public")
-  String getPublic() {
-    return this.sampleProperty;
-  }
-
   @RequestMapping("/private")
   String getPrivate() {
     return this.sampleProperty;

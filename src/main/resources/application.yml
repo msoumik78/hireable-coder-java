@@ -8,9 +8,16 @@ spring:
     user:
       name: test12
       password: password123
-#logging:
-#  level:
-#    org.springframework.security: TRACE
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 5555555
+            client-secret: xxxxxxxxxxxxxxxxxxxxx
+
+logging:
+  level:
+    org.springframework.security: TRACE
 server:
   port : 8085
 
