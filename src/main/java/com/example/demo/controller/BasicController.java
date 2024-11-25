@@ -16,11 +16,12 @@ public class BasicController {
   private final UserListConfig userListConfig;
 
   @RequestMapping("/config")
-  String getConfig() {
-    System.out.println(userListConfig.getLiveUsers().size());
+  String getConfig() throws InterruptedException {
+/*    System.out.println(userListConfig.getLiveUsers().size());
     userListConfig.getLiveUsers().forEach((k,v) -> {
       System.out.println("key :"+k+", value :"+v);
-    });
-    return this.sampleProperty;
+    });*/
+    Thread.sleep(1000);
+    return Thread.currentThread().toString();
   }
 }
