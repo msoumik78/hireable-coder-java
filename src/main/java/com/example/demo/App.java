@@ -5,6 +5,7 @@ import java.util.*;
 
 public class App {
     public static void main(String[] args) {
+        String testToken = "This is a test token";
         String randoUUID = UUID.randomUUID().toString();
         Date date = new Date();
         LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
