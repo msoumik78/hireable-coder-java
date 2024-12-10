@@ -1,17 +1,17 @@
-# Functionality : Standalone Java based NATS producer
-Simple java standalone application which can publish a message to a specific subject in NATS messaging platform. 
+# Functionality : Standalone Java program demonstrating the efficiency of connection pooling
+Simple java standalone application which queries MySQL database with and without connection pooling. 
 
 
 # Technical details and Pre-requisites
 - Written using core java.
-- Uses NATS library to make a connection and publish messages
-- Ensure that you have downloaded NATS for your OS and started the NATS server locally. NATS can be downloaded from [here](https://github.com/nats-io/nats-server/releases/) corresponding to your OS.
+- Uses MySQL database in docker container
+- Command to start docker container and create a database as follows
+  - docker run --name soumik-mysql -e MYSQL_ROOT_PASSWORD=password -p 3306:3306 -d mysql
+  - docker exec -it soumik-mysql mysql -uroot -p
+- Then create a database named 'testusers' within the mysql container
 
 
 # How to run locally
-- Clone this branch (nats-publisher) to your laptop
-- Ensure that you have latest JDK and Maven3.8.5 available
-- Build the project using the command :
-  (`mvn clean package`)
-- Now run the app using the below command which starts the app with 'test' profile:
-  (`mvn exec:java  -Dexec.mainClass="com.example.demo.DemoApplication"`)
+- First run the program to create table & populate data
+- Then run the program without connection pool 
+- Then run the program with connection pool

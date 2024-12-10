@@ -16,22 +16,39 @@ public class DemoApplication {
   private static BasicDataSource dataSource = null;
 
   static {
-    dataSource = new BasicDataSource();
-    dataSource.setUrl("jdbc:mysql://localhost:3306/test1");
-    dataSource.setUsername("root");
-    dataSource.setPassword("password");
+/*  Uncomment this block to activate connection pool
+      dataSource = new BasicDataSource();
+      dataSource.setUrl("jdbc:mysql://localhost:3306/testusers");
+      dataSource.setUsername("root");
+      dataSource.setPassword("password");
 
-    dataSource.setMinIdle(5);
-    dataSource.setMaxIdle(10);
-    dataSource.setMaxTotal(25);
+      dataSource.setMinIdle(5);
+      dataSource.setMaxIdle(10);
+      dataSource.setMaxTotal(25);
+*/
 
   }
 
 
   public static void main(String[] args) throws Exception{
+
+    Class.forName("com.mysql.jdbc.Driver");
+    Connection con= DriverManager.getConnection(
+            "jdbc:mysql://localhost:3306/testusers","root","password");
+    Statement stmt=con.createStatement();
+    /*
+    Uncomment the below lines to first create table & populate data
+      createTable(stmt);
+      populateTable(con);
+    */
+
     for (int i =1; i <=10; i++) {
+      // Uncomment the below line to fetch without connection pool
       //getDataFromDB();
-      getDataFromDBUsingPool();
+
+
+      // Uncomment the below line to fetch with connection pool
+      //getDataFromDBUsingPool();
 
     }
   }
@@ -63,7 +80,7 @@ public class DemoApplication {
     long startTime = System.currentTimeMillis();
     Class.forName("com.mysql.jdbc.Driver");
     Connection con= DriverManager.getConnection(
-      "jdbc:mysql://localhost:3306/test1","root","password");
+      "jdbc:mysql://localhost:3306/testusers","root","password");
     Statement stmt=con.createStatement();
     //createTable(stmt);
     //populateTable(con);
@@ -80,7 +97,7 @@ public class DemoApplication {
 
 
 
-  private static void createTable(Statement stmt) throws SQLException {
+  private static void createTable(Statement stmt) throws SQLException, ClassNotFoundException {
     String sql = "CREATE TABLE employees " +
       "(id INTEGER not NULL AUTO_INCREMENT, " +
       " name VARCHAR(255), " +
@@ -93,16 +110,14 @@ public class DemoApplication {
   private static void populateTable(Connection con) throws SQLException {
     String sql = "Insert into employees( name, age) values (?, ?) ";
     PreparedStatement preparedStatement = con.prepareStatement(sql);
-    for (int i = 1; i<= 100; i++) {
+    for (int i = 1; i<= 1000; i++) {
       preparedStatement.setString(1, "name"+i);
       preparedStatement.setInt(2, 40);
       preparedStatement.addBatch();
     }
     preparedStatement.executeBatch();
     System.out.println("Table populated");
-    if (preparedStatement != null) {
       preparedStatement.close();
-    }
   }
 
   private static void selectFromTable(Statement stmt) throws SQLException {
