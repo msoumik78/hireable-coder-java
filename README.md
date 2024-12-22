@@ -9,7 +9,7 @@ Simple spring boot app which reads properties from application.yml file
 # How to run locally
 - Clone this branch (spring-boot-read-properties) to your laptop with the below command:
   (`git clone --branch spring-boot-read-properties https://github.com/msoumik78/hireable-coder-java`)
-- Ensure that you have latest JDK and Maven3.8.5 available
+- Ensure that you have JDK21 and Maven3.9.9 available
 - Build the project using the command :
   (`mvn clean package`)
 - Now run the app using the below command :

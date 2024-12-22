@@ -11,12 +11,12 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.3.2</version>
+    <version>3.4.1</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
   <properties>
-    <maven.compiler.release>17</maven.compiler.release>
+    <maven.compiler.release>21</maven.compiler.release>
   </properties>
   <dependencies>
     <dependency>
@@ -27,15 +27,15 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.34</version>
-      <scope>provided</scope>
+      <version>1.18.36</version>
     </dependency>
   </dependencies>
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.0</version>
+        <version>3.13.0</version>
       </plugin>
       <plugin>
         <groupId>org.springframework.boot</groupId>
